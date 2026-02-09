@@ -1,10 +1,11 @@
 import { readFileSync } from 'node:fs';
+import type { SecureVersion } from 'node:tls';
 import type { TlsConfig } from '../types/config.types.js';
 import { SecurityError } from '../types/security.types.js';
 
 export interface TlsOptions {
   rejectUnauthorized: boolean;
-  minVersion: string;
+  minVersion: SecureVersion;
   ca?: Buffer;
 }
 
