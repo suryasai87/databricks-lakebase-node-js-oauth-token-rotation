@@ -1,0 +1,52 @@
+{
+  "name": "databricks-lakebase-node-rotator",
+  "version": "1.0.0",
+  "description": "Secure OAuth token rotation for Databricks Lakebase PostgreSQL with security hardening",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "databricks-lakebase-rotator": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "jest",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration",
+    "test:security": "jest tests/security",
+    "test:all": "jest --coverage",
+    "lint": "eslint src/ tests/",
+    "start": "node dist/cli.js",
+    "start:dev": "ts-node src/cli.ts"
+  },
+  "keywords": [
+    "databricks",
+    "lakebase",
+    "oauth",
+    "token-rotation",
+    "postgresql",
+    "security"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^20.17.0",
+    "@types/pg": "^8.11.10",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

@@ -1,0 +1,14 @@
+[Unit]
+Description=Databricks Lakebase OAuth Token Rotator (Node.js)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart={{NODE_PATH}} {{SCRIPT_PATH}}
+Restart=always
+RestartSec=60
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+
+[Install]
+WantedBy=default.target
